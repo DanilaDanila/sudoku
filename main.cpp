@@ -194,6 +194,8 @@ int main(int argc, const char **argv)
         return 1;
     }
 
+    bool less = ((argc >= 3) && (argv[2][0] == '-') && (argv[2][1] == 'l') && (argv[2][2] == 'e') && (argv[2][3] == 's') && (argv[2][4] == 's'));
+
     if(argc > 1) loadTaskFromFile(task, argv[1]);
     else
     {
@@ -278,7 +280,7 @@ int main(int argc, const char **argv)
             }
         }
 
-        drawTask(task);
+        if(!less) drawTask(task);
     }
 
     drawTask(task);
